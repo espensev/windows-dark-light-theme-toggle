@@ -43,8 +43,8 @@ $RECYCLE.BIN/
 *.bak
 *.backup
 *backup*
-*copy*
-*Copy*
+# *copy*  # Commented out to allow DarkLightThemeToggle_V2 - Copy.ps1
+# *Copy*  # Commented out to allow DarkLightThemeToggle_V2 - Copy.ps1
 
 # Archives
 *.7z

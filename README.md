@@ -1,23 +1,30 @@
 # Windows Dark/Light Theme Toggle
 
-A PowerShell script collection for easily toggling between Windows dark and light themes.
+A comprehensive PowerShell utility collection for seamlessly toggling between Windows dark and light themes.
 
-## Features
+![Windows Theme Toggle](https://img.shields.io/badge/Windows-10%2F11-blue)
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- **Multiple implementations**: PowerShell scripts and VBScript versions
-- **Flexible usage**: Toggle, force light, or force dark mode
-- **Registry integration**: Direct Windows registry manipulation for theme settings
-- **Broadcast notifications**: Notifies applications of theme changes
-- **Exit code support**: Perfect for automation and scripting
-- **Silent operation**: Quiet mode for background processes
+## ✨ Features
 
-## Files
+- **🔄 Multiple implementations**: PowerShell scripts and VBScript versions
+- **🎯 Flexible usage**: Toggle, force light, or force dark mode
+- **⚙️ Registry integration**: Direct Windows registry manipulation for theme settings
+- **📡 Broadcast notifications**: Notifies applications of theme changes instantly
+- **🤖 Exit code support**: Perfect for automation and scripting workflows
+- **🔇 Silent operation**: Quiet mode for background processes
+- **📊 Detailed feedback**: PassThru mode returns comprehensive status information
+
+## 📁 Files
 
 ### Version 3 (Latest)
+
 - **`DarkLightThemeToggle_V3.ps1`**: Advanced PowerShell script with comprehensive features
 - **`ToggleTheme_V3.vbs`**: VBScript companion
 
 ### Legacy Versions
+
 - **`DarkLightThemeToggle_V2 - Copy.ps1`**: Previous PowerShell version
 - **`DarkLightThemeToggle.bat`**: Batch file wrapper
 - **`ToggleTheme.vbs`**: Original VBScript implementation
@@ -73,11 +80,13 @@ A PowerShell script collection for easily toggling between Windows dark and ligh
 ## How It Works
 
 The script modifies Windows registry values in:
-```
+
+```registry
 HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize
 ```
 
 Specifically:
+
 - **`SystemUsesLightTheme`**: Controls system theme (taskbar, etc.)
 - **`AppsUseLightTheme`**: Controls app theme
 

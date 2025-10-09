@@ -1,10 +1,20 @@
-# Windows Dark/Light Theme Toggle
+# Windows Customization Toolkit
 
-A comprehensive PowerShell utility collection for seamlessly toggling between Windows dark and light themes.
+A comprehensive collection of PowerShell utilities for Windows UI customization and automation.
 
 ![Windows Theme Toggle](https://img.shields.io/badge/Windows-10%2F11-blue)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+## 🛠️ **Utilities Included**
+
+### 🌓 **Dark/Light Theme Toggle**
+
+Seamlessly switch between Windows dark and light themes with advanced automation features.
+
+### 👁️ **AutoHide Task View** *(New!)*
+
+Intelligently hide the Task View button when only one virtual desktop exists, show it when multiple desktops are in use.
 
 ## ✨ Features
 
@@ -18,20 +28,29 @@ A comprehensive PowerShell utility collection for seamlessly toggling between Wi
 
 ## 📁 Files
 
-### Version 3 (Latest)
+### 🌓 Dark/Light Theme Toggle
+
+#### Version 3 (Latest)
 
 - **`DarkLightThemeToggle_V3.ps1`**: Advanced PowerShell script with comprehensive features
 - **`ToggleTheme_V3.vbs`**: VBScript companion
 
-### Legacy Versions
+#### Legacy Versions
 
 - **`DarkLightThemeToggle_V2 - Copy.ps1`**: Previous PowerShell version
 - **`DarkLightThemeToggle.bat`**: Batch file wrapper
 - **`ToggleTheme.vbs`**: Original VBScript implementation
 
-## Usage
+### 👁️ AutoHide Task View
 
-### PowerShell Script (Recommended)
+- **`AutoHide_TaskView.ps1`**: Main event-driven script
+- **`Install-AutoHideTaskView.ps1`**: Automated installer with scheduled task
+- **`Uninstall-AutoHideTaskView.ps1`**: Clean removal utility
+- **`Add-StartupShortcut.ps1`**: Alternative startup method
+
+## 🚀 Usage
+
+### 🌓 **Dark/Light Theme Toggle**
 
 ```powershell
 # Toggle theme (default behavior)
@@ -45,15 +64,24 @@ A comprehensive PowerShell utility collection for seamlessly toggling between Wi
 
 # Toggle with quiet output
 .\DarkLightThemeToggle_V3\DarkLightThemeToggle_V3.ps1 -Toggle -Quiet
-
-# Get detailed information
-.\DarkLightThemeToggle_V3\DarkLightThemeToggle_V3.ps1 -PassThru
-
-# Use as automation (exit codes)
-.\DarkLightThemeToggle_V3\DarkLightThemeToggle_V3.ps1 -AsExitCode
 ```
 
-### Parameters
+### 👁️ **AutoHide Task View**
+
+```powershell
+# Install with scheduled task (recommended)
+.\AutoHideTaskView\Install-AutoHideTaskView.ps1 -StartNow
+
+# Run manually for testing
+.\AutoHideTaskView\AutoHide_TaskView.ps1
+
+# Uninstall completely
+.\AutoHideTaskView\Uninstall-AutoHideTaskView.ps1
+```
+
+## 📋 Parameters
+
+### 🌓 Dark/Light Theme Toggle Parameters
 
 - **`-Light`**: Force light theme
 - **`-Dark`**: Force dark theme  
@@ -61,6 +89,13 @@ A comprehensive PowerShell utility collection for seamlessly toggling between Wi
 - **`-Quiet`**: Suppress output messages
 - **`-PassThru`**: Return detailed information object
 - **`-AsExitCode`**: Map results to exit codes for automation
+
+### 👁️ AutoHide Task View Parameters
+
+#### Install-AutoHideTaskView.ps1
+- **`-InstallDir`**: Custom installation directory (default: `%LOCALAPPDATA%\AutoHideTaskView`)
+- **`-TaskName`**: Custom scheduled task name (default: "AutoHide Task View")
+- **`-StartNow`**: Start the service immediately after installation
 
 ### Exit Codes (when using -AsExitCode)
 

@@ -5,7 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.0.0] - 2025-10-06
+## [4.0.0] - 2025-10-09
+
+### Added
+
+- **🆕 AutoHide Task View utility** - Complete new Windows customization tool
+- **Event-driven Task View management** - Intelligently hide/show Task View button based on virtual desktop count
+- **Professional installer/uninstaller** - Automated setup with scheduled tasks
+- **Single-instance protection** - Mutex-based prevention of duplicate processes
+- **Graceful shutdown handling** - Stop event for clean termination
+- **WMI event monitoring** - Registry change detection with polling fallback
+- **Comprehensive documentation** - Full README for AutoHide Task View utility
+
+### Changed
+
+- **Repository scope expanded** - Now "Windows Customization Toolkit" instead of just theme toggle
+- **Enhanced README structure** - Multi-utility documentation with clear sections
+- **Improved project organization** - Clear separation of utilities and their components
+
+### Technical Details
+
+- **AutoHide Task View v1.2** with mutex, stop-event, installer/uninstaller
+- **Explorer refresh optimization** - Gentle notification instead of process restart
+- **Robust registry monitoring** - Per-session and base path virtual desktop tracking
+- **Professional deployment** - Scheduled task with proper user context
 
 ### Added
 - **Enhanced PowerShell script** with comprehensive parameter support

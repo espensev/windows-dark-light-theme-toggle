@@ -9,7 +9,8 @@ echo.
 
 REM Clean previous build artifacts
 echo [0/3] Cleaning...
-del *.obj *.res "*.lnk" 2>nul
+del *.obj *.res 2>nul
+REM Note: Not deleting *.lnk as shortcuts are intentional user-created files
 
 REM Step 1: Compile resource file
 echo [1/3] Compiling resources (with themetoggle_dark.ico)...

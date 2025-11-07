@@ -5,6 +5,58 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.1] - 2025-11-07
+
+### 🐛 Critical Bug Fixes & Polish Release
+
+**V4.1.1** addresses critical UI synchronization issues, enhances scripting support, and adds user control over automation features.
+
+### Fixed
+
+- **🔄 UI sync bug** - Theme changes now broadcast even when registry matches target, ensuring taskbar/apps update immediately
+- **🎨 Error output consistency** - Exception handlers now use colored `PrintError()` instead of raw `std::cerr`
+- **📝 Manifest DPI awareness** - Fixed `true/PM` → `True/PM` (capital T) for proper Per-Monitor DPI fallback
+- **📍 Scheduled task paths** - Changed `%CD%` → `%~dp0` in setup.bat for reliable execution from any directory
+
+### Added
+
+- **⚙️ Integrated disable options** - setup.bat menu now includes removal options [6-9] for full user control
+  - [6] Remove Desktop Shortcut
+  - [7] Remove from Startup  
+  - [8] Remove Scheduled Tasks
+  - [9] Remove All (complete uninstall)
+- **📜 Enhanced PowerShell wrapper** - Complete refactor with professional parameter support
+  - `[CmdletBinding()]` for advanced PowerShell integration
+  - Parameter sets: `-Light`, `-Dark`, `-Toggle`
+  - New switches: `-ShowWindow`, `-Quiet`, `-PassThru`, `-AsExitCode`
+  - Proper exit code propagation
+  - stdout/stderr capture and display
+  - Process wait for completion
+- **🔇 Improved VBS launchers** - Consistent formatting and error handling across all three silent launchers
+  - Named constants for clarity
+  - Error checking for missing executable
+  - Proper resource cleanup
+  - Unified documentation style
+
+### Changed
+
+- **🧹 Build script cleanup** - Removed inappropriate `*.lnk` deletion from build.bat
+- **🗑️ Separate cleanup** - Created dedicated `clean.bat` for full cleanup operations
+- **📋 Setup workflow** - Single integrated menu for both enable and disable operations
+
+### Technical Details
+
+- **C++ improvements**: UI sync broadcasts even on early exits to prevent stale UI state
+- **PowerShell quality**: Now follows PowerShell best practices with proper cmdlet binding
+- **VBS consistency**: All three launchers (Toggle, Light, Dark) now have identical structure
+- **User empowerment**: Complete control over automation without needing separate uninstall script
+
+### Migration Notes
+
+**From v4.1.0 or v4.0.0:** Drop-in replacement with improved behavior. No breaking changes.
+
+---
+
 ## [4.0.0] - 2025-11-07
 
 ### 🚀 MAJOR UPGRADE - Complete C++ Rewrite

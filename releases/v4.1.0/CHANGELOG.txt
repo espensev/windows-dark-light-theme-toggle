@@ -1,0 +1,92 @@
+Windows Theme Toggler - Version 4.1.0
+Release Date: November 7, 2025
+
+WHAT'S NEW IN v4.1.0
+--------------------
+
+Code Quality Improvements (Internal):
+  • Cleaner argument parsing with std::transform + lambda
+  • Named constants for semantic clarity (BROADCAST_TIMEOUT_MS)
+  • Better error handling with std::optional<DWORD>
+  • More idiomatic modern C++17 code
+  • Enhanced inline documentation
+
+Bug Fixes:
+  • None (stability improvements only)
+
+Performance:
+  • No changes (maintains 45-500x faster than PowerShell versions)
+  • Still ~5-10ms when no change needed
+  • Still ~110ms for full theme toggle
+
+
+PREVIOUS VERSIONS
+-----------------
+
+v4.0.0 (2025-11-07) - Initial Native Release
+  • Complete rewrite in C++17 from PowerShell
+  • 45-500x faster performance
+  • Zero dependencies, single portable executable
+  • Production-grade RAII resource management
+  • Dual broadcast for instant taskbar updates
+  • Silent VBS launchers included
+  • Smart early-exit optimization
+  • Pipe-safe output detection
+  • LTSC/Server compatibility (creates missing registry keys)
+
+
+UPGRADE NOTES
+-------------
+
+From v4.0.0:
+  • Drop-in replacement - no breaking changes
+  • Same command-line interface
+  • Same file names and behavior
+  • Just replace the executable
+
+From v3.x (PowerShell):
+  • Command syntax change: -Light → /light
+  • Much faster execution
+  • No PowerShell execution policy issues
+  • See legacy/README.md for migration guide
+
+
+SYSTEM REQUIREMENTS
+-------------------
+
+  • Windows 10 version 1809 or later
+  • Windows 11 (all versions)
+  • Windows Server 2019 or later
+  • No Visual C++ Redistributable required (statically linked)
+  • ~220 KB disk space
+
+
+KNOWN ISSUES
+------------
+
+  • None reported for v4.1.0
+
+
+CHECKSUMS
+---------
+
+See SHA256SUMS.txt for file integrity verification.
+
+To verify:
+  Get-FileHash ThemeToggle.exe -Algorithm SHA256
+  Compare with SHA256SUMS.txt
+
+
+SUPPORT
+-------
+
+GitHub: https://github.com/espensev/windows-dark-light-theme-toggle
+Issues: https://github.com/espensev/windows-dark-light-theme-toggle/issues
+Documentation: See README.txt or GitHub repository
+
+
+LICENSE
+-------
+
+MIT License - See LICENSE.txt
+Copyright (c) 2025 espensev

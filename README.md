@@ -66,7 +66,15 @@ Intelligently hide the Task View button when only one virtual desktop exists, sh
 
 ## 🚀 Quick Start
 
-### ⚡ **Windows Theme Toggler V4** (Recommended)
+### ⭐ **Easiest: Download Pre-built Release**
+
+**[📥 Download ThemeToggle v4.1.0](releases/v4.1.0/ThemeToggle-v4.1.0.zip)** (125 KB)
+
+Extract and double-click `ThemeToggle.vbs` to toggle instantly!
+
+---
+
+### ⚡ **Windows Theme Toggler V4** (For Developers/Building from Source)
 
 #### Direct Execution (Shows Console)
 ```cmd

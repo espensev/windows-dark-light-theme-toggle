@@ -1,0 +1,149 @@
+Windows Theme Toggler - Version 4.1.1
+Release Date: November 7, 2025
+
+WHAT'S NEW IN v4.1.1
+--------------------
+
+Critical Bug Fixes:
+  • Fixed UI sync issue - Theme changes now broadcast even when registry 
+    already matches target, ensuring taskbar and apps update immediately
+  • Fixed error output consistency - Exception handlers now use colored 
+    PrintError() instead of raw stderr
+  • Fixed manifest DPI awareness - Corrected true/PM → True/PM for proper 
+    Per-Monitor DPI fallback
+  • Fixed scheduled task paths - Changed %CD% → %~dp0 in setup.bat for 
+    reliable execution from any directory
+
+New Features:
+  • Integrated disable options in setup.bat menu:
+    [6] Remove Desktop Shortcut
+    [7] Remove from Startup
+    [8] Remove Scheduled Tasks
+    [9] Remove All (complete uninstall)
+  • No need for separate uninstall.bat - everything in one menu!
+
+Enhanced PowerShell Wrapper (ThemeToggle.ps1):
+  • Full [CmdletBinding()] support for advanced PowerShell integration
+  • New parameters: -ShowWindow, -Quiet, -PassThru, -AsExitCode
+  • Proper exit code propagation for automation
+  • stdout/stderr capture and display
+  • Process wait for completion
+  • Follows PowerShell best practices
+
+Improved VBS Launchers:
+  • Consistent formatting across all three launchers
+  • Better error handling with executable existence checks
+  • Named constants for clarity
+  • Proper resource cleanup
+  • Unified documentation style
+
+Quality Improvements:
+  • Removed inappropriate *.lnk deletion from build.bat
+  • Created separate clean.bat for full cleanup operations
+  • Enhanced user control over automation features
+
+
+UPGRADE FROM v4.1.0 or v4.0.0
+-----------------------------
+
+This is a drop-in replacement with no breaking changes:
+  1. Replace ThemeToggle.exe with new version
+  2. Replace ThemeToggle.ps1 (enhanced parameters)
+  3. Replace setup.bat (new disable options)
+  4. Replace all three .vbs files (improved consistency)
+
+All existing shortcuts, scheduled tasks, and workflows continue to work.
+
+
+PERFORMANCE
+-----------
+
+No performance changes from v4.1.0:
+  • Still 5-10ms when no change needed
+  • Still ~110ms for full theme toggle
+  • Still 45-500x faster than PowerShell versions
+
+
+SYSTEM REQUIREMENTS
+-------------------
+
+  • Windows 10 version 1809 or later
+  • Windows 11 (all versions)
+  • Windows Server 2019 or later
+  • No Visual C++ Redistributable required (statically linked)
+  • ~220 KB disk space
+
+
+KNOWN ISSUES
+------------
+
+  • Minor compiler warning C4189 (unused variable) - no impact on functionality
+  • Minor compiler warning C4244 (std::transform) - safe conversion
+
+
+CHECKSUMS
+---------
+
+See SHA256SUMS.txt for file integrity verification.
+
+To verify:
+  Get-FileHash ThemeToggle.exe -Algorithm SHA256
+  Compare with SHA256SUMS.txt
+
+
+WHAT'S INCLUDED
+---------------
+
+  ThemeToggle.exe          - Main executable (~220 KB)
+  ThemeToggle.ps1          - PowerShell wrapper (enhanced)
+  ThemeToggle.vbs          - Silent toggle launcher
+  ThemeToggle-Light.vbs    - Silent light mode launcher
+  ThemeToggle-Dark.vbs     - Silent dark mode launcher
+  setup.bat                - Interactive installer with disable options
+  uninstall.bat            - Complete uninstaller (or use setup.bat option 9)
+  LICENSE.txt              - MIT License
+  README.txt               - Quick start guide
+  CHANGELOG.txt            - This file
+  SHA256SUMS.txt           - File integrity checksums
+
+
+QUICK START
+-----------
+
+Basic Usage:
+  • Double-click ThemeToggle.vbs to toggle silently
+  • Run ThemeToggle.exe for console output
+  • Run setup.bat for automatic configuration
+
+Commands:
+  ThemeToggle.exe          - Toggle theme
+  ThemeToggle.exe /light   - Force light theme
+  ThemeToggle.exe /dark    - Force dark theme
+  ThemeToggle.exe /quiet   - Silent mode (no output)
+
+PowerShell:
+  .\ThemeToggle.ps1 -Toggle      - Toggle theme
+  .\ThemeToggle.ps1 -Light       - Force light theme
+  .\ThemeToggle.ps1 -Dark        - Force dark theme
+  .\ThemeToggle.ps1 -ShowWindow  - Show console output
+  .\ThemeToggle.ps1 -AsExitCode  - Return exit codes
+
+Setup Options:
+  Run setup.bat and choose:
+    [1-4] - Enable features (shortcuts, startup, tasks)
+    [6-9] - Disable features (remove shortcuts, startup, tasks)
+
+
+SUPPORT
+-------
+
+GitHub: https://github.com/espensev/windows-dark-light-theme-toggle
+Issues: https://github.com/espensev/windows-dark-light-theme-toggle/issues
+Documentation: See README.txt or GitHub repository
+
+
+LICENSE
+-------
+
+MIT License - See LICENSE.txt
+Copyright (c) 2025 espensev

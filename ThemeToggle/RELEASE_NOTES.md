@@ -1,6 +1,61 @@
-# ?? Release Build Complete!
+# 🚀 Release Notes
 
-## ? What Was Built
+## Version 4.1.0 - Code Quality Improvements (2025-11-07)
+
+### ✨ What's New
+
+**Code Quality Enhancements** - Professional-grade improvements based on C++ best practices:
+
+#### 1. **Cleaner Argument Parsing**
+   - Replaced verbose `for` loop with `std::transform` + lambda
+   - More idiomatic C++ with `<algorithm>` and `<cctype>`
+   - Better readability and maintainability
+
+#### 2. **Semantic Clarity - Named Constants**
+   - Added `constexpr BROADCAST_TIMEOUT_MS = 50`
+   - Replaced magic number with descriptive constant
+   - Improves code documentation and maintainability
+
+#### 3. **Better Error Handling with `std::optional`**
+   - Replaced `bool GetRegistryValue(...)` with `std::optional<DWORD>`
+   - Missing registry values are now explicitly recoverable (not exceptional)
+   - Cleaner API: `value_or(default)` pattern
+   - More idiomatic modern C++17
+
+### 🔧 Technical Details
+
+**Before:**
+```cpp
+bool GetRegistryValue(HKEY hKey, ..., DWORD& outValue)
+DWORD value = 0;
+bool success = GetRegistryValue(..., value);
+if (!success) value = 0;
+```
+
+**After:**
+```cpp
+std::optional<DWORD> GetRegistryValue(HKEY hKey, ...)
+DWORD value = GetRegistryValue(...).value_or(0);
+```
+
+**Why better:**
+- No output parameters
+- Explicit "value might not exist" semantics
+- Compiler-enforced checking
+- Recoverable errors don't throw exceptions
+
+### 📊 Impact
+
+- **Performance**: No change (optimizations maintained)
+- **Binary size**: No significant change (~220 KB)
+- **Compatibility**: Fully backward compatible
+- **Code quality**: Improved (cleaner, more maintainable, more idiomatic C++17)
+
+---
+
+## Version 4.0.0 - Initial Release (2025-11-07)
+
+## 🎯 What Was Built
 
 **ThemeToggle.exe** - Production-ready Windows theme toggler
 

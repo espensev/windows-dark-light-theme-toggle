@@ -1,11 +1,11 @@
 ' ============================================================================
-' ThemeToggle - Force Light Mode (Silent)
+' ThemeToggle Silent Launcher
 ' ============================================================================
-' Purpose: Silently switch to Light theme
+' Purpose: Launch ThemeToggle.exe silently without showing console window
 ' Usage:
-'   - Double-click to force Light mode silently
-'   - Assign to hotkey for instant Light theme
-'   - Use in scheduled tasks for morning automation
+'   - Double-click to toggle theme silently
+'   - Assign to hotkey for instant theme switching
+'   - Use in scheduled tasks for sunrise/sunset automation
 ' ============================================================================
 
 Option Explicit
@@ -13,6 +13,7 @@ Option Explicit
 ' Configuration
 Const TOGGLE_EXE = "ThemeToggle.exe"
 Const WINDOW_HIDDEN = 0
+Const WAIT_FOR_COMPLETION = True
 Const DONT_WAIT = False
 
 ' Get the directory where this VBS script is located
@@ -28,12 +29,13 @@ If Not fso.FileExists(exePath) Then
     WScript.Quit 1
 End If
 
-' Create shell object and run silently with /light flag
-Dim shell
+' Create shell object and run silently
+Dim shell, exitCode
 Set shell = CreateObject("WScript.Shell")
 
-' Run ThemeToggle.exe with /light and /quiet flags, hidden window
-shell.Run """" & exePath & """ /light /quiet", WINDOW_HIDDEN, DONT_WAIT
+' Run ThemeToggle.exe with /quiet flag, hidden window, don't wait
+' This makes it completely silent and non-blocking
+exitCode = shell.Run("""" & exePath & """ /quiet", WINDOW_HIDDEN, DONT_WAIT)
 
 ' Clean up
 Set shell = Nothing
